@@ -1,0 +1,36 @@
+﻿@model Dapper101.Models.ProductDetailsViewModel
+@{
+    ViewData["Title"] = "ProductDetails";
+}
+
+<h1>ProductDetails</h1>
+<h1>@Model.ProductName</h1>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Supplier ID</th>
+                <th>Category ID</th>
+                <th>Quantity Per Unit</th>
+                <th>Unit Price</th>
+                <th>Units In Stock</th>
+                <th>Units On Order</th>
+                <th>ReOrder Level</th>
+                <th>Discontinued</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.SupplierID</td>
+                <td>@Model.CategoryID</td>
+                <td>@Model.QuantityPerUnit</td>
+                <td>@Model.UnitPrice</td>
+                <td>@Model.UnitsInStock</td>
+                <td>@Model.UnitsOnOrder</td>
+                <td>@Model.ReorderLevel</td>
+                <td>@Model.Discontinued</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>

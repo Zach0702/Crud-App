@@ -1,0 +1,27 @@
+﻿@model Dapper101.Models.ProductsViewModel
+@{
+    ViewData["Title"] = "SelectUpdateProduct";
+}
+
+<h1>Select Which Product to Update</h1>
+
+<table>
+    <thead>
+        <tr>
+            @*<th>Product ID</th>*@
+            <th>Product Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var product in Model.ListOfProducts)
+        {
+            <tr>
+                @*<td>@product.ProductID</td>*@
+                <td><a asp-controller="Northwind" asp-action="UpdateProductInfo" asp-route-id="@product.ProductID">@product.ProductName</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

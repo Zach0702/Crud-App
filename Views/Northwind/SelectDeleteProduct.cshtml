@@ -1,0 +1,25 @@
+﻿@model Dapper101.Models.ProductsViewModel
+@{
+    ViewData["Title"] = "SelectDeleteProduct";
+}
+
+<h1>SelectDeleteProduct</h1>
+<table>
+    <thead>
+        <tr>
+            @*<th>Product ID</th>*@
+            <th>Product Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var product in Model.ListOfProducts)
+        {
+            <tr>
+                @*<td>@product.ProductID</td>*@
+                <td><a asp-controller="Northwind" asp-action="DeletionResult" asp-route-id="@product.ProductID">@product.ProductName</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

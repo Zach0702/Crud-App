@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "GetCustomer";
+}
+
+<h1>GetCustomer</h1>
+
+<h4>Search for the user by first name....</h4>
+
+<form asp-controller="Northwind" asp-action="Customer">
+    <label>Customer First Name: </label>
+    <input type="text" name="firstName"/>
+    <button>Get Customer</button>
+</form>
