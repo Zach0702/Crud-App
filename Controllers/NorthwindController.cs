@@ -80,7 +80,8 @@ namespace Dapper101.Controllers
 
             if (!ModelState.IsValid)
             {
-                return View("Error");
+                return View("Error", new ErrorViewModel
+                {ErrorMessage = "Error product was not added correctly" });
             }
             else
             {
@@ -97,7 +98,17 @@ namespace Dapper101.Controllers
         public IActionResult DeletionResult(int ID)
         {
             var productViewModel = _productService.DeleteProduct(ID);
-            return View("Products", productViewModel);
+
+            if (!ModelState.IsValid)
+            {
+                return View("Error", new ErrorViewModel
+                { ErrorMessage = "ERROR the product was not deleted correctly" });
+            }
+
+            else
+            {
+                return View("Products", productViewModel);
+            }
         }
 
         public IActionResult SelectUpdateProduct()
@@ -126,7 +137,18 @@ namespace Dapper101.Controllers
         public IActionResult UpdateResults(UpdateProductViewModel userUpdates)
         {
             var results = _productService.ShowUpdatedProduct(userUpdates.ProductID, userUpdates);
-            return View("ProductDetails", results);
+
+            if(!ModelState.IsValid)
+            {
+                return View("Error", new ErrorViewModel
+                { ErrorMessage = "ERROR product was not added correctly" });
+            }
+
+            else
+            {
+                return View("ProductDetails", results);
+            }
+            
         }
     }
 }

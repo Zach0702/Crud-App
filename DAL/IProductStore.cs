@@ -32,15 +32,15 @@ namespace Dapper101.DAL
             {
                 var result = connection.Execute(sql, modelToDelete);
 
-                return true;
-                //if (result == 1)
-                //{
-                //    return true;
-                //}
-                //else
-                //{
-                //    return false;
-                //}
+                //return true;
+                if (result == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
         }
@@ -98,7 +98,14 @@ namespace Dapper101.DAL
             {
                 var result = connection.Execute(sql, modelToUpdate);
 
-                return true;
+                if (result == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }
